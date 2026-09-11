@@ -1120,10 +1120,15 @@ h3 {
 }
 
 .apple-header .brand-logo-shell {
-  width: 30px;
-  height: 30px;
-  border-radius: 9px;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
   padding: 0;
+}
+
+.apple-header .brand-logo {
+  width: 74%;
+  height: 74%;
 }
 
 .apple-header .desktop-nav {
@@ -1137,6 +1142,11 @@ h3 {
 .apple-header .desktop-nav > a,
 .apple-header .header-contact-menu {
   position: relative;
+}
+
+.apple-header .desktop-nav > a {
+  padding: 6px 8px;
+  line-height: 24px;
 }
 
 .apple-header .header-contact-trigger {
@@ -1793,9 +1803,9 @@ h3 {
 .product-demo-video {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 2 / 1;
   object-fit: cover;
-  border-radius: 24px;
+  border-radius: 20px;
   border: 1px solid rgba(74, 109, 255, 0.18);
   background: #eef2ff;
   box-shadow: 0 18px 40px rgba(29, 29, 31, 0.1);
