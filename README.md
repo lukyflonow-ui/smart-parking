@@ -1,12 +1,10 @@
-# 智慧停车系统 · 在线展示
+# 智慧停车系统 · 产品原型
 
-智慧停车系统原型在线演示站点（GitHub Pages 托管）。
+一套完整的停车管理系统产品原型：官网宣传页 + 29 个后台功能页面（多页面版），页面之间可互相跳转。
 
-## 目录结构
-- `/website/` — 官网首页（体验按钮跳转到下方演示）
-- `/demo/` — 智慧停车系统交互原型（在线体验）
-- 使用手册部署于 Cloudflare Pages：`https://smart-parking-manual.pages.dev`（部署后生效）
+- **index.html** — 官网首页（起始页），点「体验」直达系统后台
+- **通行管理-出入口值守.html** 等 29 个页面 — 后台各功能模块，侧边栏自由跳转
+- **产品导航.html** — 全部页面导航入口
 
-## 上线前待办
-1. 部署使用手册到 Cloudflare Pages 后，将 `website/site-config.js` 中 `manualSiteUrl` 与 `website/index.html` 中的手册链接替换为真实地址
-2. 域名可后续绑定自定义域名
+## 在线体验
+GitHub Pages：https://lukyflonow-ui.github.io/smart-parking/

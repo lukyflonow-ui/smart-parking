@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智慧停车系统 · 产品原型导航</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f4f6fa; color: #1e293b; font-size: 14px; }
+  .top { background: linear-gradient(135deg, #0f1e35, #1a2f52); color: #fff; padding: 44px 40px 40px; }
+  .top .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .top .brand img { width: 36px; height: 36px; filter: brightness(0) invert(1); }
+  .top h1 { font-size: 24px; font-weight: 700; }
+  .top p { color: #a8b8d4; margin-top: 6px; }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 24px 32px 60px; }
+  .block { background: #fff; border: 1px solid #e8ecf5; border-radius: 14px; padding: 20px 24px; margin-top: 20px; }
+  .block h2 { font-size: 16px; font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .block h2 .tag { font-size: 12px; color: #3f5bf6; background: #eef1ff; padding: 2px 10px; border-radius: 20px; font-weight: 500; }
+  .entry { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border: 1px solid #e2e8f0; border-radius: 10px; color: #334155; text-decoration: none; margin: 0 10px 10px 0; font-weight: 500; transition: all .15s; }
+  .entry:hover { border-color: #3f5bf6; color: #3f5bf6; background: #f5f7ff; }
+  .entry .ic { width: 26px; height: 26px; border-radius: 7px; background: #eef1ff; color: #3f5bf6; display: grid; place-items: center; font-size: 13px; font-weight: 700; }
+  .entry.main { background: #3f5bf6; border-color: #3f5bf6; color: #fff; }
+  .entry.main .ic { background: rgba(255,255,255,.18); color: #fff; }
+  .entry.main:hover { background: #3658e8; color: #fff; }
+  .foot { text-align: center; color: #94a3b8; font-size: 12px; padding: 10px 0 30px; }
+  .sub { color: #64748b; font-size: 13px; margin: -6px 0 14px; }
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="brand"><img src="assets/logo-vehicle.svg" alt=""><h1>智慧停车系统 · 产品原型导航</h1></div>
+  <p>官网宣传页 · 系统管理后台（多页面版）· 使用手册，一站式体验入口</p>
+</div>
+<div class="wrap">
+
+  <div class="block">
+    <h2>🚗 官网宣传页 <span class="tag">完整交互</span></h2>
+    <div class="sub">产品介绍、视频演示、功能模块，点「体验」直达系统后台</div>
+    <a class="entry main" href="01-官网/index.html"><span class="ic">网</span>打开官网首页</a>
+  </div>
+
+  <div class="block">
+    <h2>🛠 系统后台 · 通行管理 <span class="tag">29 个独立页面</span></h2>
+    <div class="sub">每个菜单为独立页面，侧边栏点击即可跳转</div>
+    <a class="entry main" href="通行管理-出入口值守.html"><span class="ic">P01</span>出入口值守（实时监控）</a>
+    <a class="entry" href="通行管理-出入记录.html"><span class="ic">P01</span>出入记录</a>
+    <a class="entry" href="通行管理-出入记录-记录详情.html"><span class="ic">P02</span>出入记录详情</a>
+    <a class="entry" href="通行管理-黑名单.html"><span class="ic">P03</span>黑名单</a>
+    <a class="entry" href="通行管理-白名单.html"><span class="ic">P03</span>白名单</a>
+  </div>
+
+  <div class="block">
+    <h2>🅿 停车管理</h2>
+    <a class="entry" href="停车管理-停车场管理.html"><span class="ic">P04</span>停车场管理</a>
+    <a class="entry" href="停车管理-车位地图.html"><span class="ic">P04</span>车位地图</a>
+    <a class="entry" href="停车管理-车辆管理.html"><span class="ic">P05</span>车辆管理</a>
+    <a class="entry" href="停车管理-预约管理.html"><span class="ic">P06</span>预约管理</a>
+  </div>
+
+  <div class="block">
+    <h2>📹 视频与设备</h2>
+    <a class="entry" href="视频与设备-历史视频回放.html"><span class="ic">P09</span>历史视频回放</a>
+    <a class="entry" href="视频与设备-设备管理.html"><span class="ic">P10</span>设备管理</a>
+    <a class="entry" href="视频与设备-故障告警.html"><span class="ic">P11</span>故障告警</a>
+  </div>
+
+  <div class="block">
+    <h2>💰 收费运营</h2>
+    <a class="entry" href="收费运营-停车订单.html"><span class="ic">P12</span>停车订单</a>
+    <a class="entry" href="收费运营-收费规则.html"><span class="ic">P13</span>收费规则</a>
+    <a class="entry" href="收费运营-商户优惠.html"><span class="ic">P14</span>商户优惠</a>
+    <a class="entry" href="收费运营-优惠券管理.html"><span class="ic">P15</span>优惠券管理</a>
+    <a class="entry" href="收费运营-交接班.html"><span class="ic">P16</span>交接班</a>
+    <a class="entry" href="收费运营-财务对账.html"><span class="ic">P17</span>财务对账</a>
+    <a class="entry" href="收费运营-发票管理.html"><span class="ic">P18</span>发票管理</a>
+  </div>
+
+  <div class="block">
+    <h2>📊 数据报表</h2>
+    <a class="entry" href="数据报表-收入统计.html"><span class="ic">P19</span>收入统计</a>
+    <a class="entry" href="数据报表-车流分析.html"><span class="ic">P20</span>车流分析</a>
+    <a class="entry" href="数据报表-车位利用率.html"><span class="ic">P21</span>车位利用率</a>
+    <a class="entry" href="数据报表-异常统计.html"><span class="ic">P22</span>异常统计</a>
+  </div>
+
+  <div class="block">
+    <h2>⚙️ 系统管理</h2>
+    <a class="entry" href="系统管理-项目停车场.html"><span class="ic">P23</span>项目停车场</a>
+    <a class="entry" href="系统管理-组织与用户.html"><span class="ic">P24</span>组织与用户</a>
+    <a class="entry" href="系统管理-角色权限.html"><span class="ic">P25</span>角色权限</a>
+    <a class="entry" href="系统管理-操作日志.html"><span class="ic">P26</span>操作日志</a>
+    <a class="entry" href="系统管理-系统配置.html"><span class="ic">P27</span>系统配置</a>
+  </div>
+
+  <div class="block">
+    <h2>📖 使用手册 <span class="tag">在线应用</span></h2>
+    <div class="sub">手册为 Next.js 在线应用，点击在浏览器新标签页打开</div>
+    <a class="entry main" href="https://xuanjian-documentation.lukyflonow.workers.dev/" target="_blank" rel="noopener"><span class="ic">册</span>打开使用手册</a>
+  </div>
+
+</div>
+<div class="foot">© 智慧停车系统 2026 · 多页面产品原型</div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>智慧停车系统 · 管理系统交互原型</title>
+<title>角色权限 · 智慧停车系统</title>
 <link rel="icon" type="image/svg+xml" href="assets/parking-system-logo.svg" />
 <style>
   :root {
@@ -553,16 +553,18 @@
   .gate-tabs.header-tabs { padding: 0; border-bottom: 1px solid var(--border); height: 100%; align-items: center; gap: 4px; }
   .gate-tabs.header-tabs .gate-tab { margin: 0 0 -1px; height: 100%; display: flex; align-items: center; padding: 0 14px; font-size: 14px; }
   @media(max-width:1200px){.gate-grid{grid-template-columns:repeat(2,minmax(220px,1fr));}}
+  .nav-item { text-decoration: none; }
+  .nav-item:hover .nav-icon { background: var(--primary); color: #fff; }
 </style>
 </head>
 <body>
 <div class="layout">
   <!-- 侧栏（JS 渲染） -->
   <aside class="sidebar">
-    <div class="brand" id="brand" title="点击返回首页">
+    <a class="brand" id="brand" href="工作台-运营看板.html" title="返回运营看板">
           <div class="brand-icon"><img src="assets/logo-vehicle.svg" alt="智慧停车系统"></div>
       <div class="brand-title">智慧停车系统</div>
-    </div>
+    </a>
     <nav class="nav" id="nav"></nav>
     <div class="sidebar-footer">© 停车管家 2026</div>
   </aside>
@@ -1101,25 +1103,26 @@ function gateAction(el, action, lane) {
 /* =========================================================
  * 渲染：侧栏
  * ======================================================= */
+/* ===== 多页面模式：页面清单与当前页 ===== */
+const PAGE_FILE = {"home": "工作台-运营看板.html", "gate": "通行管理-出入口值守.html", "inout": "通行管理-出入记录.html", "inout-detail": "通行管理-出入记录-记录详情.html", "blacklist": "通行管理-黑名单.html", "whitelist": "通行管理-白名单.html", "parking": "停车管理-停车场管理.html", "pkmap": "停车管理-车位地图.html", "vehicle": "停车管理-车辆管理.html", "reserve": "停车管理-预约管理.html", "history": "视频与设备-历史视频回放.html", "device": "视频与设备-设备管理.html", "alarm": "视频与设备-故障告警.html", "order": "收费运营-停车订单.html", "fee": "收费运营-收费规则.html", "merchant": "收费运营-商户优惠.html", "coupon": "收费运营-优惠券管理.html", "shift": "收费运营-交接班.html", "reconcile": "收费运营-财务对账.html", "invoice": "收费运营-发票管理.html", "income": "数据报表-收入统计.html", "traffic": "数据报表-车流分析.html", "utilize": "数据报表-车位利用率.html", "abnormal": "数据报表-异常统计.html", "project": "系统管理-项目停车场.html", "org": "系统管理-组织与用户.html", "perm": "系统管理-角色权限.html", "oplog": "系统管理-操作日志.html", "settings": "系统管理-系统配置.html"};
+const CURRENT_PAGE = "perm";
+const CURRENT_GROUP = "系统管理";
 const navEl = document.getElementById("nav");
 navEl.innerHTML = MENU.map(g => `
-  <div class="nav-group ${g.group==="通行管理"?"open":""}">
+  <div class="nav-group ${g.group===CURRENT_GROUP?"open":""}">
     <div class="nav-group-title" onclick="toggleNavGroup(this)">${g.group}</div>
     <div class="nav-items">${g.items.filter(it => !it.hidden).map(it => `
-      <div class="nav-item" data-id="${it.id}">
+      <a class="nav-item ${it.id===CURRENT_PAGE||(CURRENT_PAGE==='inout-detail'&&it.id==='inout')?"active":""}" data-id="${it.id}" href="${PAGE_FILE[it.id]}" title="${it.text}">
         <div class="nav-icon ${it.ic}">${it.icon}</div>
         <div class="nav-text">${it.text}</div>
-      </div>`).join("")}</div>
+      </a>`).join("")}</div>
   </div>`).join("");
 /* 分类折叠：支持手动展开多个分类，互不影响 */
 function toggleNavGroup(title) {
   title.closest(".nav-group").classList.toggle("open");
 }
-navEl.addEventListener("click", e => {
-  const item = e.target.closest(".nav-item");
-  if (item) go(item.dataset.id);
-});
-document.getElementById("brand").addEventListener("click", () => go("home"));
+/* 多页面模式：菜单为页面链接，无需切换监听 */
+/* 多页面模式：brand 为链接 */
 
 /* 收起 / 展开侧栏 */
 const sidebarEl = document.querySelector(".sidebar");
@@ -2491,8 +2494,8 @@ document.addEventListener("click", e => {
 });
 
 
-/* 默认进入出入口值守（实时监控页签） */
-go("gate");
+/* 默认进入当前页 */
+go(CURRENT_PAGE);
 </script>
 </body>
 </html>
